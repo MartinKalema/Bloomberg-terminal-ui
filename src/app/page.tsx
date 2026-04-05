@@ -243,17 +243,16 @@ export default function Home() {
         </div>
       )}
 
-      {/* === TAB 5: TRADING (order entry + blotter + depth) === */}
+      {/* === TAB 5: TRADING (EMSX order entry + chart + depth + blotter) === */}
       {activePageTab === "5" && (
         <div
-          className="flex-1 grid grid-cols-[280px_1fr_280px] grid-rows-[1fr_1fr] min-h-0"
+          className="flex-1 grid grid-cols-[260px_1fr_280px] grid-rows-[55%_45%] min-h-0"
           style={{ gap: "2px", background: "#1a1000" }}
         >
-          <div className="min-h-0 overflow-hidden row-span-2"><TradeTicketPanel /></div>
+          <div className="min-h-0 overflow-hidden"><TradeTicketPanel /></div>
           <div className="min-h-0 overflow-hidden"><ChartPanel /></div>
           <div className="min-h-0 overflow-hidden"><OrderBookPanel /></div>
-          <div className="min-h-0 overflow-hidden"><BlotterPanel /></div>
-          <div className="min-h-0 overflow-hidden"><WatchlistPanel /></div>
+          <div className="min-h-0 overflow-hidden col-span-3"><BlotterPanel /></div>
         </div>
       )}
 
