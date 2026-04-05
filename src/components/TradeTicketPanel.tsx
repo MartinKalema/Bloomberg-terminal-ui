@@ -106,7 +106,7 @@ export default function TradeTicketPanel() {
       {/* ── Order Entry Section ── */}
       <div style={{ flexShrink: 0, borderBottom: "1px solid #1a1000" }}>
         {/* Row 1: Security + Account */}
-        <div style={{ display: "flex", gap: "4px", padding: "4px 6px", borderBottom: "1px solid #0a0800" }}>
+        <div style={{ display: "flex", gap: "4px", padding: "4px 8px 4px 6px", borderBottom: "1px solid #0a0800" }}>
           <Field label="SECURITY" width="100%">
             <input
               type="text" value={security} onChange={e => setSecurity(e.target.value)}
@@ -114,14 +114,16 @@ export default function TradeTicketPanel() {
               spellCheck={false}
             />
           </Field>
-          <Field label="ACCT" width="52px">
-            <select value={account} onChange={e => setAccount(e.target.value)}
-              style={{ ...inputStyle, cursor: "pointer", padding: "3px 2px" }}>
-              <option value="MAIN">MAIN</option>
-              <option value="HEDGE">HEDGE</option>
-              <option value="PROP">PROP</option>
-            </select>
-          </Field>
+          <div style={{ flexShrink: 0 }}>
+            <Field label="ACCT" width="auto">
+              <select value={account} onChange={e => setAccount(e.target.value)}
+                style={{ ...inputStyle, cursor: "pointer", padding: "3px 20px 3px 4px", minWidth: "72px" }}>
+                <option value="MAIN">MAIN</option>
+                <option value="HEDGE">HEDGE</option>
+                <option value="PROP">PROP</option>
+              </select>
+            </Field>
+          </div>
         </div>
 
         {/* Row 2: Side */}
@@ -207,7 +209,7 @@ export default function TradeTicketPanel() {
           <button onClick={handleSend} style={{
             background: flash ? "#ffcc00" : "#ffa028", color: "#000",
             border: "none", fontFamily: "monospace", fontSize: "9px",
-            fontWeight: "bold", padding: "4px 12px", cursor: "pointer",
+            fontWeight: "bold", padding: "4px 8px", cursor: "pointer",
             transition: "background 0.15s",
           }}>SEND</button>
           <button onClick={() => { setSecurity("SPX Index"); setQty("100"); setOrderType("MKT"); setPrice("5428.75"); setBroker("DIRECT"); }}
